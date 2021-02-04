@@ -23,7 +23,6 @@ const makeCase = function(input, text) {
   } else if (text === "kebab") {
     let output = input.split(" ");
     output = output.join("-");
-    console.log(output);
     return output;
   } else if (text === "title") {
     let output = input.split(" ");
@@ -39,6 +38,10 @@ const makeCase = function(input, text) {
     for (let i = 0; i < output.length; i++) {
       for (let j = 0; j < output[i].length; j++) {
         if (output[i][j] === "a" || output[i][j] === "e" || output[i][j] === "i" || output[i][j] === "o" || output[i][j] === "u") {
+          console.log(output[i][j]);
+          output[i][j] = "hello";
+          console.log(output[i][j]);
+
           let upperCaseVar = output[i][j].toUpperCase();
           newOutput += upperCaseVar;
         } else {
@@ -67,6 +70,7 @@ const makeCase = function(input, text) {
     for (let i = 0; i < text.length; i++) {
       input = makeCase(input, text[i]);
     }
+    return input;
   }
 };
 
